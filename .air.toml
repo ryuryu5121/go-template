@@ -1,0 +1,18 @@
+# .air.toml config file example
+[build]
+  bin = "main"  # バイナリファイルの名前
+  cmd = "go build -o ./main /app/api/main.go"  # ビルドコマンド
+  include_ext = ["go", "tpl", "tmpl", "html"]
+  exclude_dir = ["vendor"]
+  exclude_ext = ["git", "DS_Store"]
+  exclude = ["assets", "tmp"]
+
+[run]
+  cmd = "./main"
+  watch_dir = ["."]
+  watch_ext = ["go", "tpl", "tmpl", "html"]
+  watch_delay = 500
+  ignore = ["assets", "tmp"]
+
+[log]
+  color = "true"
